@@ -1,7 +1,9 @@
 # three.js
 
-Some practices of three.js. Base on the book blow.
-You can get a free access from here (Chinese version only)
+Here are examples of three.js which is based on the book which is linked below. 
+You can get free access here.  (Chinese version only)
+
+
 
 [Three.js入门指南](https://www.ituring.com.cn/book/miniarticle/47975)
 <br/>
