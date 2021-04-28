@@ -22,8 +22,8 @@
 
     // camera
     // THREE.PerspectiveCamera(fov, aspect, near, far)
-    var camera = new THREE.PerspectiveCamera(60, 400 / 300, 1, 10);
-    camera.position.set(0, -6, 5);
+    var camera = new THREE.PerspectiveCamera(90, 400 / 300, 1, 10);
+    camera.position.set(0, 0, 5);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add(camera);
 
@@ -51,7 +51,15 @@
       })
     );
 
-    scene.add(circlegeometry);
+    // a CylinderGeometry in the scene
+    var cylindergeometry = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 4, 18, 3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true
+      })
+    );
+
+    scene.add(cylindergeometry);
 
     // render
     renderer.render(scene, camera);
