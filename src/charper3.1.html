@@ -22,20 +22,28 @@
 
     // camera
     // THREE.PerspectiveCamera(fov, aspect, near, far)
-    var camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 10);
-    camera.position.set(4, 5, 6);
+    var camera = new THREE.PerspectiveCamera(60, 400 / 300, 1, 10);
+    camera.position.set(5, -5, 5);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add(camera);
 
-
-    // a item in the scene
-    var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3),
+    // a Plan in the scene
+    var cube = new THREE.Mesh(new THREE.PlaneGeometry(2, 4),
       new THREE.MeshBasicMaterial({
         color: 0xff0000,
         wireframe: true
       })
     );
-    scene.add(cube);
+
+    // a Sphere in the scene
+    var sphere = new THREE.Mesh(new THREE.SphereGeometry(3, 18, 12),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true
+      })
+    );
+
+    scene.add(sphere);
 
     // render
     renderer.render(scene, camera);
