@@ -23,8 +23,10 @@
     // camera
     // THREE.PerspectiveCamera(fov, aspect, near, far)
     var camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 10);
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 1, 6);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add(camera);
+
 
     // a cube in the scene
     var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 1, 1),
