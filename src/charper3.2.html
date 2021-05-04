@@ -29,9 +29,9 @@
         "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_regular.typeface.json",
         function(font) {
           var mesh = new THREE.Mesh(
-            new THREE.TextGeometry("Hello", {
+            new THREE.TextGeometry("Good Night", {
               font: font,
-              size: 1,
+              size: 0.5,
               height: 1
             }),
             material
@@ -40,8 +40,8 @@
 
           // camera
           var camera = new THREE.OrthographicCamera(-2.5, 2.5, 1.875, -1.875, 0.1, 100);
-          camera.position.set(5, 5, 20);
-          camera.lookAt(new THREE.Vector3(1, 0, 0));
+          camera.position.set(5, 5, 60);
+          camera.lookAt(new THREE.Vector3(2, 0, 0));
           scene.add(camera);
 
           // render
