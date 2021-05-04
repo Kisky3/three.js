@@ -24,6 +24,10 @@
     emissive: 0xff0000
 })
 
+// light
+var light = new THREE.AmbientLight(0xffffff);
+scene.add(light);
+
       var loader = new THREE.FontLoader();
       loader.load(
         "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_regular.typeface.json",
