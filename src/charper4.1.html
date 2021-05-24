@@ -19,8 +19,9 @@
       // scene
       var scene = new THREE.Scene();
 
-      var material = new THREE.MeshPhongMaterial({
-        specular: 0xff0000
+      var material = new THREE.MeshBasicMaterial({
+        color: 0xffff00,
+        opacity: 0.75
       });
 
       // a CircleGeometry in the scene
