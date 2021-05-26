@@ -5,13 +5,18 @@
 
     <script type="text/javascript">
       function init() {
+        // サイズを取得
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
         var renderer = new THREE.WebGLRenderer({
           canvas: document.getElementById("mainCanvas")
         });
-        renderer.setClearColor(0x000000);
+        renderer.setClearColor(new THREE.Color("rgb(51, 51, 51)"));
+
+        // シーンを作成
         var scene = new THREE.Scene();
 
-       
         renderer.render(scene, camera);
       }
     </script>
