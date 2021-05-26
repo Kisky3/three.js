@@ -17,6 +17,27 @@
         // シーンを作成
         var scene = new THREE.Scene();
 
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(40, width / height); // カメラの位置をセットする
+        camera.position.set(0, 0, 1000);
+
+        // ジオメトリを作成
+        const geometry = new THREE.SphereGeometry(300, 30, 30);
+
+        // マテリアルを作成
+        const material = new THREE.MeshStandardMaterial({
+          // 色を指定
+          color: new THREE.Color("rgb(0, 159, 140)"),
+          // 見た目をワイヤーフレームにする
+          wireframe: true
+        });
+
+        // メッシュ(球体)を作成
+        const mesh = new THREE.Mesh(geometry, material);
+
+        // 3D空間にメッシュを追加
+        scene.add(mesh);
+
         renderer.render(scene, camera);
       }
     </script>
