@@ -38,7 +38,46 @@
         // 3D空間にメッシュを追加
         scene.add(mesh);
 
-        renderer.render(scene, camera);
+        // 環境光源を作成
+    const ambient = new THREE.AmbientLight(0xFFFFFF, 1);
+    // シーンに追加
+    scene.add(ambient);
+
+// 平行光源を作成
+const directional = new THREE.DirectionalLight(0xFFFFFF, 1);
+    // 平行光源の位置をセットする
+    directional.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directional);
+
+    function render(){
+      // メッシュを回転させる
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
+      // 時間経過でrender関数(アニメーション)を更新する
+      requestAnimationFrame(render);
+      //シーンとカメラをレンダリングして画面を更新する
+      renderer.render(scene, camera);
+    }
+    // render関数を実行する
+    render();
+
+
+    window.addEventListener("resize", onResize);
+
+    function onResize() {
+      // レンダラーのサイズを調整する
+      renderer.setPixelRatio(window.devicePixelRatio);
+      // レンダラーのサイズを画面の幅に合わせる
+      renderer.setSize(width, height);
+
+      // カメラのアスペクト比を正す
+      camera.aspect = width / height;
+      // アスペクト比の変更を有効にする
+      camera.updateProjectionMatrix();
+    }
+    // onResize関数を実行
+    onResize();
       }
     </script>
   </head>
