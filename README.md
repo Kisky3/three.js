@@ -42,3 +42,6 @@ You can get free access here.  (Chinese version only)
 
 #### Flight Example
 [Preview](https://kisky3.github.io/three.js/src/flight_example.html) | [Coding](https://github.com/Kisky3/three.js/blob/main/src/flight_example.html)
+
+#### Flight_Mouse_Move Example
+[Preview](https://kisky3.github.io/three.js/src/flight_mouse_move.html) | [Coding](https://github.com/Kisky3/three.js/blob/main/src/flight_mouse_move.html)
