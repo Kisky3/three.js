@@ -23,17 +23,12 @@
     let scene, camera, fieldOfView, aspectRatio, nearPlane, farPlane, HEIGHT, WIDTH, renderer, container
 
     function createScene() {
-      // Get the width and the height of the screen,
-      // use them to set up the aspect ratio of the camera
-      // and the size of the renderer.
       HEIGHT = window.innerHeight
       WIDTH = window.innerWidth
 
       // Create the scene
       scene = new THREE.Scene()
 
-      // Add a fog effect to the scene; same color as the
-      // background color used in the style sheet
       scene.fog = new THREE.Fog(0xf7d9aa, 100, 950)
 
       // Create the camera
@@ -63,23 +58,8 @@
       // Enable shadow rendering
       renderer.shadowMap.enabled = true
 
-      // Add the DOM element of the renderer to the
-      // container we created in the HTML
       container = document.getElementById('world')
       container.appendChild(renderer.domElement)
-
-      // Listen to the screen: if the user resizes it
-      // we have to update the camera and the renderer size
-      // window.addEventListener('resize', handleWindowResize, false)
-    }
-
-    function handleWindowResize() {
-      // update height and width of the renderer and the camera
-      HEIGHT = window.innerHeight
-      WIDTH = window.innerWidth
-      renderer.setSize(WIDTH, HEIGHT)
-      camera.aspect = WIDTH / HEIGHT
-      camera.updateProjectionMatrix()
     }
 
     let hemisphereLight, shadowLight, ambientLight;
@@ -105,7 +85,6 @@
       shadowLight.shadow.camera.near = 1
       shadowLight.shadow.camera.far = 1000
 
-
       shadowLight.shadow.mapSize.width = 2048
       shadowLight.shadow.mapSize.height = 2048
 
@@ -120,9 +99,7 @@
       const geom = new THREE.SphereGeometry(800, 80, 80)
       // create the material
       let mat = new THREE.MeshStandardMaterial({
-          // 色を指定
           color: new THREE.Color("rgb(0, 159, 140)"),
-          // 見た目をワイヤーフレームにする
           wireframe: true
         });new THREE.MeshPhongMaterial({
         transparent: true,
@@ -256,7 +233,6 @@
       loop()
     }
     window.addEventListener('load', init, false)
-
   </script>
 </body>
 
