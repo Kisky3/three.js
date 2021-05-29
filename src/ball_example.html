@@ -2,6 +2,19 @@
 <html>
   <head>
     <script type="text/javascript" src="../js/three.js"></script>
+    <html>
+      <body>
+        <canvas class="stage"></canvas>
+        <script src="js/three.js"></script>
+        <script>
+          // Our Javascript will go here.
+          function init() {
+            //Three.js の処理をかく
+          }
+          window.addEventListener("load", init);
+        </script>
+      </body>
+    </html>
 
     <script type="text/javascript">
       function init() {
@@ -52,8 +65,8 @@
 
         function render() {
           // メッシュを回転させる
-          mesh.rotation.x += 0.01;
-          mesh.rotation.y += 0.01;
+          mesh.rotation.x += 0.02;
+          mesh.rotation.y += 0.02;
           // 時間経過でrender関数(アニメーション)を更新する
           requestAnimationFrame(render);
           //シーンとカメラをレンダリングして画面を更新する
