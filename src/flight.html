@@ -93,16 +93,10 @@
     let hemisphereLight, shadowLight, ambientLight;
 
     function createLights() {
-      // an ambient light modifies the global color of a scene and makes the shadows softer
       ambientLight = new THREE.AmbientLight(0xdc8874, .5)
 
-      // A hemisphere light is a gradient colored light
-      // the first parameter is the sky color, the second parameter is the ground color,
-      // the third parameter is the intensity of the light
       hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, .9)
 
-      // A directional light shines from a specific direction.
-      // It acts like the sun, that means that all the rays produced are parallel.
       shadowLight = new THREE.DirectionalLight(0xffffff, .9)
 
       // Set the direction of the light
@@ -148,32 +142,21 @@
       this.mesh.geometry.verticesNeedUpdate = true
 
     }
-    // now we create the function that will be called in each frame
-    // to update the position of the vertices to simulate the waves
-
-    // Instantiate the sea and add it to the scene:
 
     let sea
 
     function createSea() {
       sea = new Sea()
-
-      // push it a little bit at the bottom of the scene
       sea.mesh.position.y = -750
-
-      // add the mesh of the sea to the scene
       scene.add(sea.mesh)
     }
-
-    // Now we instantiate the sky and push its center a bit
-    // towards the bottom of the screen
 
     const AirPlane = function () {
 
       this.mesh = new THREE.Object3D()
 
       // Create the cabin
-      const geomCockpit = new THREE.BoxGeometry(80, 50, 50, 1, 1, 1)
+      const geomCockpit = new THREE.BoxGeometry(50, 50, 50, 1, 1, 1)
       const matCockpit = new THREE.MeshPhongMaterial({
         color: Colors.red,
         shading: THREE.FlatShading
@@ -255,13 +238,10 @@
     }
 
     function loop() {
-      // Rotate the propeller, the sea and the sky
       airplane.propeller.rotation.x += 0.2
 
-      // render the scene
       renderer.render(scene, camera)
 
-      // call the loop function again
       requestAnimationFrame(loop)
     }
 
@@ -276,8 +256,6 @@
       createPlane()
       createSea()
 
-      // start a loop that will update the objects' positions
-      // and render the scene on each frame
       loop()
     }
     window.addEventListener('load', init, false)
