@@ -41,4 +41,4 @@ You can get free access here.  (Chinese version only)
 [Preview](https://kisky3.github.io/three.js/src/ball_example.html) | [Coding](https://github.com/Kisky3/three.js/blob/main/src/ball_example.html)
 
 #### Flight Example
-[Preview](https://kisky3.github.io/three.js/src/flight.html) | [Coding](https://github.com/Kisky3/three.js/blob/main/src/flight.html)
+[Preview](https://kisky3.github.io/three.js/src/flight_example.html) | [Coding](https://github.com/Kisky3/three.js/blob/main/src/flight_example.html)
