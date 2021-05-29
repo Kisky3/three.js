@@ -55,17 +55,9 @@
 
       // Create the renderer
       renderer = new THREE.WebGLRenderer({
-        // Allow transparency to show the gradient background
-        // we defined in the CSS
         alpha: true,
-
-        // Activate the anti-aliasing; this is less performant,
-        // but, as our project is low-poly based, it should be fine :)
-        antialias: true
       });
 
-      // Define the size of the renderer; in this case,
-      // it will fill the entire screen
       renderer.setSize(WIDTH, HEIGHT)
 
       // Enable shadow rendering
@@ -113,8 +105,7 @@
       shadowLight.shadow.camera.near = 1
       shadowLight.shadow.camera.far = 1000
 
-      // define the resolution of the shadow; the higher the better,
-      // but also the more expensive and less performant
+
       shadowLight.shadow.mapSize.width = 2048
       shadowLight.shadow.mapSize.height = 2048
 
@@ -128,8 +119,12 @@
     const Sea = function () {
       const geom = new THREE.SphereGeometry(800, 80, 80)
       // create the material
-      let mat = new THREE.MeshPhongMaterial({
-        color: Colors.blue,
+      let mat = new THREE.MeshStandardMaterial({
+          // 色を指定
+          color: new THREE.Color("rgb(0, 159, 140)"),
+          // 見た目をワイヤーフレームにする
+          wireframe: true
+        });new THREE.MeshPhongMaterial({
         transparent: true,
         opacity: 1,
         shading: THREE.FlatShading,
@@ -239,6 +234,8 @@
 
     function loop() {
       airplane.propeller.rotation.x += 0.2
+      sea.mesh.rotation.x += 0.001;
+      sea.mesh.rotation.y += 0.006;
 
       renderer.render(scene, camera)
 
